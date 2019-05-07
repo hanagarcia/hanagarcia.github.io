@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!-- saved from url=(0055)http://threejsplaygnd.brangerbriz.com/editor/?id=id7282 -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		
+<html>
+	<head>
+		<meta charset="utf-8">
 		<style>
 			body {
 				background-color: #ffffff;
@@ -10,14 +10,14 @@
 			}
 		</style>
 	</head>
-	<body style="background: rgb(0, 0, 0);">
-		
-		<script src="./three.min.js.download"></script>
-		<script src="./Detector.js.download"></script>
-		<script>if ( window.innerWidth === 0 ) { window.innerWidth = parent.innerWidth; window.innerHeight = parent.innerHeight; }
+	<body>
+
+		<script src="http://threejsplaygnd.brangerbriz.net/js/three.min.js"></script>
+		<script src="http://threejsplaygnd.brangerbriz.net/js/Detector.js"></script>
+		<script>
 
 			if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
-			
+
 			var camera, scene, renderer;
 			var geometry, material, mesh;
 
@@ -32,8 +32,8 @@
 				camera.position.z = 500;
 
 				scene = new THREE.Scene();
-				
-				
+
+
 				geometry = new THREE.SphereGeometry(180.02, 22.12, 10.02);
 material = new THREE.MeshNormalMaterial({shading: THREE.FlatShading, side: THREE.DoubleSide, wireframe: true, wireframeLinewidth: 2.59});
 mesh = new THREE.Mesh(geometry, material);
@@ -54,14 +54,14 @@ renderer.shadowMapEnabled = true;
 
 			}
 
-			function draw() {mesh.rotation.x = Date.now() * 0.00001;	
-				mesh.rotation.y = Date.now() * 0.0001;	
+			function draw() {mesh.rotation.x = Date.now() * 0.00001;
+				mesh.rotation.y = Date.now() * 0.0001;
 				mesh.rotation.z = Date.now() * 0.0001;particles.rotation.y = Date.now() * 0.00005;var time = Date.now() * 0.0005;
 				h = ( 360 * ( 1.0 + time ) % 360 ) / 360;
 				material.color.setHSL( h, 0.5, 0.5 );
 
 				requestAnimationFrame( draw );
-				
+
 				// experiment with code from the snippets menu here
 
 				renderer.render( scene, camera );
@@ -83,7 +83,7 @@ renderer.shadowMapEnabled = true;
 				scene.add( particles );
 			draw();
 
-		</script><canvas width="1366" height="657"></canvas>
-		
-	
-</body></html>
+		</script>
+
+	</body>
+</html>
